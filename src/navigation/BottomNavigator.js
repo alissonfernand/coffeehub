@@ -1,30 +1,71 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, Image} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Home from '../screens/Home';
-import Map from '../screens/Map';
-import Cart from '../screens/Cart';
-import Profile from '../screens/Profile';
+import Home from '../tabs/Home';
+import Map from '../tabs/Map';
+import Cart from '../tabs/Cart';
+import Profile from '../tabs/Profile';
 
-import COLORS from '../consts/colors';
+import {COLORS} from '../consts/utils';
+
+import HomeIcon from '../components/HomeIcon';
+import ProfileIcon from '../components/ProfileIcon';
+import LocationIcon from '../components/LocationIcon';
+import CoffeeIcon from '../components/CoffeeIcon';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigator = () => {
   return (
-    <NavigationContainer>
-      <StatusBar backgroundColor={COLORS.background} barStyle="dark-content" />
-
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Map" component={Map} />
-        <Tab.Screen name="Cart" component={Cart} />
-        <Tab.Screen name="Profile" component={Profile} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+        style: {
+          backgroundColor: '#ffffff',
+          height: 90,
+          borderTopLeftRadius: 46,
+          borderTopRightRadius: 46,
+          shadowOffset: {height: 0, width: 2},
+          shadowColor: '#FDE9DA',
+          shadowRadius: 88,
+          shadowOpacity: 1,
+        },
+        activeTintColor: COLORS.tabBarActiveTintColor,
+        inactiveTintColor: COLORS.tabBarInactiveTintColor,
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({color}) => <HomeIcon color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Map"
+        component={Map}
+        options={{
+          tabBarIcon: ({color}) => <LocationIcon color={color} />,
+          tabBarBadge: 3,
+        }}
+      />
+      <Tab.Screen
+        name="Cart"
+        component={Cart}
+        options={{
+          tabBarIcon: ({color}) => <CoffeeIcon color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({color}) => <ProfileIcon color={color} />,
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 
