@@ -28,10 +28,10 @@ const Home = ({navigation}) => {
     <Container>
       <NavBar>
         <DisplayDrawer onPress={() => navigation.openDrawer()}>
-          <Image source={drawer} />
+          <Image source={drawer} style={{resizeMode: 'contain'}} />
         </DisplayDrawer>
         <DisplaySearch>
-          <Image source={search} />
+          <Image source={search} style={{resizeMode: 'contain'}} />
         </DisplaySearch>
       </NavBar>
       <Menu>
