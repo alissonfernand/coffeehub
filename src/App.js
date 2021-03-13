@@ -1,9 +1,12 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import DrawerNavigator from './navigation/DrawerNavigator';
-import {StatusBar} from 'react-native';
+
+import ProductDetails from './page/ProductDetails';
 
 import {COLORS} from './consts/utils';
 
@@ -14,8 +17,11 @@ const App = () => {
     <NavigationContainer>
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
 
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        screenOptions={{headerShown: false}}
+        initialRouteName="DrawerNavigator">
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
