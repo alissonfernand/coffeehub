@@ -3,10 +3,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import BottomNavigator from '../navigation/BottomNavigator';
 
-import Home from '../tabs/Home';
-import Map from '../tabs/Map';
 import Cart from '../tabs/Cart';
-import Profile from '../tabs/Profile';
 
 const Drawer = createDrawerNavigator();
 
