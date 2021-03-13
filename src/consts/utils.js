@@ -1,3 +1,8 @@
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
+
 // COLORS
 export const COLORS = {
   background: '#FAF4EE',
@@ -10,4 +15,9 @@ export const COLORS = {
 export const FONT_FAMILY = {
   fontRegular: 'Sen-Regular',
   fontBold: 'Sen-Bold',
+};
+
+export const SIZE_TAB_ICONS = {
+  width: responsiveWidth(6.2),
+  height: responsiveHeight(3.7),
 };
