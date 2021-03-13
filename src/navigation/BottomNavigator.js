@@ -1,8 +1,8 @@
 import React from 'react';
-import {StatusBar, Image} from 'react-native';
 
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+import {responsiveHeight} from 'react-native-responsive-dimensions';
 
 import Home from '../tabs/Home';
 import Map from '../tabs/Map';
@@ -18,6 +18,8 @@ import CoffeeIcon from '../components/CoffeeIcon';
 
 const Tab = createBottomTabNavigator();
 
+const heightTabBar = responsiveHeight(10.05);
+
 const BottomNavigator = () => {
   return (
     <Tab.Navigator
@@ -25,7 +27,7 @@ const BottomNavigator = () => {
         showLabel: false,
         style: {
           backgroundColor: '#ffffff',
-          height: 90,
+          height: heightTabBar,
           borderTopLeftRadius: 46,
           borderTopRightRadius: 46,
           shadowOffset: {height: 0, width: 2},
