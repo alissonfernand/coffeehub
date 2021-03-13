@@ -45,6 +45,7 @@ import SugarZero from '../../components/sugars/SugarZero';
 import SugarOne from '../../components/sugars/SugarOne';
 import SugarTwo from '../../components/sugars/SugarTwo';
 import SugarThree from '../../components/sugars/SugarThree';
+import AppBar from '../../components/AppBar';
 
 const ProductDetails = () => {
   const [size, setSize] = useState('small');
@@ -80,12 +81,7 @@ const ProductDetails = () => {
 
       <ContainerShadow>
         <ImageBackground source={background}>
-          <TabBar>
-            <TouchableOpacity onPress={() => console.log('dasd')}>
-              <IconBack />
-            </TouchableOpacity>
-            <ProductName>Macchiato</ProductName>
-          </TabBar>
+          <AppBar producName={'dasdasd'} />
 
           <ProductImage source={img} />
         </ImageBackground>

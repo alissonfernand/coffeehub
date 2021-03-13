@@ -26,32 +26,6 @@ export const ContainerShadow = styled.View`
   elevation: 50;
 `;
 
-export const TabBar = styled.View.attrs({})`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 65px 32px 25px;
-  margin-bottom: 47px;
-`;
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  flex: 1;
-`;
-
-export const IconBack = styled(Icon).attrs({
-  name: 'chevron-left',
-})`
-  font-size: 20px;
-  color: #8c746a;
-`;
-
-export const ProductName = styled.Text`
-  flex: 2;
-  font-family: ${FONT_FAMILY.fontBold};
-  font-size: 23px;
-  line-height: 31;
-`;
 export const ProductImage = styled.Image.attrs({
   resizeMode: 'contain',
 })`
