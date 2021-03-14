@@ -81,7 +81,7 @@ const ProductDetails = () => {
 
       <ContainerShadow>
         <ImageBackground source={background}>
-          <AppBar producName={'dasdasd'} />
+          <AppBar text={'dasdasd'} />
 
           <ProductImage source={img} />
         </ImageBackground>
