@@ -1,15 +1,21 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 
-import {AppBarContainer, IconBack, ProductName} from './styles';
+import {
+  AppBarContainer,
+  HandleNavigation,
+  IconBack,
+  ProductName,
+} from './styles';
 
-const AppBar = ({producName}) => {
+const AppBar = ({text}) => {
   return (
     <AppBarContainer>
-      <TouchableOpacity onPress={() => console.log('dasd')}>
-        <IconBack />
-      </TouchableOpacity>
-      <ProductName>{producName}</ProductName>
+      <HandleNavigation onPress={() => console.log('dasd')}>
+        <IconBack style={{zIndex: 15}} />
+      </HandleNavigation>
+      <ProductName>{text}</ProductName>
+      {/* <View /> */}
     </AppBarContainer>
   );
 };
