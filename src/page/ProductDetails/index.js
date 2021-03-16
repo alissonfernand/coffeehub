@@ -3,14 +3,12 @@ import {ScrollView, StatusBar, View} from 'react-native';
 
 import background from '../../assets/background_details.png';
 
+import Button from '../../components/Button';
+
 import {
   Container,
   ContainerShadow,
   ImageBackground,
-  TabBar,
-  TouchableOpacity,
-  IconBack,
-  ProductName,
   ProductImage,
   Wrapper,
   ProducName,
@@ -149,9 +147,9 @@ const ProductDetails = () => {
         </ContainerSugarIcons>
 
         <ContainerButton>
-          <ButtonAddCart>
+          <Button>
             <TextButton>Add to cart</TextButton>
-          </ButtonAddCart>
+          </Button>
         </ContainerButton>
       </ScrollView>
     </Container>
