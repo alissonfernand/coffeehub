@@ -13,6 +13,7 @@ import {COLORS, FONT_FAMILY} from '../../consts/utils';
 export const Container = styled.SafeAreaView`
   flex: 1;
   background: ${COLORS.background};
+  padding-top: 60px;
 `;
 
 export const NavBar = styled.View`
