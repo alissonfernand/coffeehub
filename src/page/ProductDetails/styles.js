@@ -157,18 +157,6 @@ export const ContainerButton = styled.View`
   margin-bottom: 55px;
 `;
 
-export const ButtonAddCart = styled.TouchableOpacity.attrs({
-  shadowcolor: 'red',
-})`
-  width: 198px;
-  height: 55px;
-  background-color: ${COLORS.primary};
-  border-radius: 28px;
-  justify-content: center;
-  align-items: center;
-  elevation: 30;
-`;
-
 export const TextButton = styled.Text.attrs({})`
   font-family: ${FONT_FAMILY.fontRegular};
   font-size: 18px;
