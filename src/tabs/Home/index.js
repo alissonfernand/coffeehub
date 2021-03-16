@@ -1,10 +1,12 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, StatusBar} from 'react-native';
 // import {Image} from 'react-native';
 
 import drawer from '../../assets/drawer.png';
 import search from '../../assets/search.png';
 import coffees from '../../consts/coffees';
+
+import {COLORS} from '../../consts/utils';
 
 import {
   Container,
@@ -26,6 +28,11 @@ import {
 const Home = ({navigation}) => {
   return (
     <Container>
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <NavBar>
         <DisplayDrawer onPress={() => navigation.openDrawer()}>
           <Image source={drawer} style={{resizeMode: 'contain'}} />
