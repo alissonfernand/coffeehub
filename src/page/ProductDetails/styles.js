@@ -8,6 +8,13 @@ export const Container = styled.View`
   flex: 1;
 `;
 
+export const ContainerShadow = styled.View`
+  height: 369px;
+  border-radius: 46px;
+  background-color: #faf4ee;
+  elevation: 20;
+`;
+
 export const ImageBackground = styled.ImageBackground.attrs({
   resizeMode: 'cover',
   borderBottomLeftRadius: 46,
@@ -17,13 +24,36 @@ export const ImageBackground = styled.ImageBackground.attrs({
   width: 100%;
   height: 369px;
   align-items: center;
+  /* padding: 0 27px; */
 `;
 
-export const ContainerShadow = styled.View`
-  height: 369px;
-  border-radius: 46px;
-  background-color: #faf4ee;
-  elevation: 50;
+export const AppBar = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 32px 47px;
+`;
+
+export const HandleNavigation = styled.TouchableOpacity``;
+
+export const IconBack = styled(Icon).attrs({
+  name: 'chevron-left',
+})`
+  font-size: 20px;
+  color: #8c746a;
+`;
+
+export const AppBarTitle = styled.Text`
+  font-family: ${FONT_FAMILY.fontBold};
+  font-size: 23px;
+  line-height: 31;
+  text-align: center;
+`;
+
+export const Spacer = styled.View`
+  width: 20px;
+  height: 20px;
 `;
 
 export const ProductImage = styled.Image.attrs({
@@ -57,7 +87,9 @@ export const ContainerAmount = styled.View`
   justify-content: center;
 `;
 
-export const Decrement = styled.TouchableOpacity`
+export const Decrement = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})`
   height: 28px;
   width: 31px;
   justify-content: center;
@@ -83,7 +115,9 @@ export const Amount = styled.Text`
   text-align: center;
 `;
 
-export const Increment = styled.TouchableOpacity`
+export const Increment = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})`
   justify-content: center;
   align-items: center;
   height: 28px;
