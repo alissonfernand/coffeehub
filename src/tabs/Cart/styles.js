@@ -9,6 +9,21 @@ export const Container = styled.ImageBackground.attrs({
 })`
   flex: 1;
   background-color: ${COLORS.background};
+  padding-top: 60px;
+`;
+
+export const TextCard = styled.Text`
+  font-family: ${FONT_FAMILY.fontBold};
+  font-size: 23px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #2d140d;
+  margin-bottom: 40px;
+`;
+
+export const ScrollProducts = styled.ScrollView`
+  height: 360px;
 `;
 
 export const CartProduct = styled.View.attrs({
@@ -58,5 +73,38 @@ export const ContainerQuantityPrice = styled.View`
   justify-content: space-between;
   margin-bottom: 16px;
 `;
-export const ProductAmount = styled.Text``;
-export const ProductPrice = styled.Text``;
+export const ProductAmount = styled.Text`
+  font-family: ${FONT_FAMILY.fontBold};
+  font-weight: bold;
+  font-size: 12px;
+  color: #7e7e7e;
+`;
+
+export const ProductPrice = styled.Text`
+  font-family: ${FONT_FAMILY.fontBold};
+  font-weight: bold;
+  font-size: 16px;
+  color: #cf9775;
+`;
+
+export const ContainerPriceBuy = styled.View`
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 27px 27px;
+  flex-direction: row;
+`;
+
+export const Price = styled.Text`
+  font-family: ${FONT_FAMILY.fontBold};
+  font-weight: bold;
+  font-size: 30px;
+  color: #cf9775;
+`;
+
+export const TextBuy = styled.Text`
+  font-family: ${FONT_FAMILY.fontRegular};
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffffff;
+`;
