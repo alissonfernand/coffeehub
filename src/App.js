@@ -8,22 +8,30 @@ import DrawerNavigator from './navigation/DrawerNavigator';
 
 import ProductDetails from './page/ProductDetails';
 
+import {Provider} from 'react-redux';
+import store from './store';
+
 import {COLORS} from './consts/utils';
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StatusBar barStyle="dark-content" backgroundColor={COLORS.background} />
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor={COLORS.background}
+        />
 
-      <Stack.Navigator
-        screenOptions={{headerShown: false}}
-        initialRouteName="DrawerNavigator">
-        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
-        <Stack.Screen name="ProductDetails" component={ProductDetails} />
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{headerShown: false}}
+          initialRouteName="DrawerNavigator">
+          <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+          <Stack.Screen name="ProductDetails" component={ProductDetails} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 export default App;
