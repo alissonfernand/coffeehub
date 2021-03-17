@@ -19,6 +19,7 @@ import {
   Title,
   TitleBold,
   FlatItem,
+  SelectProduct,
   Wrapper,
   IconCoffee,
   CoffeeTitle,
@@ -54,13 +55,19 @@ const Home = ({navigation}) => {
         data={coffees}
         keyExtractor={(item) => item.id}
         renderItem={({item}) => (
-          <FlatItem>
-            <Wrapper>
-              <IconCoffee source={item.image} style={{resizeMode: 'contain'}} />
-              <CoffeeTitle>{item.name}</CoffeeTitle>
-            </Wrapper>
-            <IconArrow name="chevron-right" />
-          </FlatItem>
+          <SelectProduct
+            onPress={() => navigation.navigate('ProductDetails', item)}>
+            <FlatItem>
+              <Wrapper>
+                <IconCoffee
+                  source={item.image}
+                  style={{resizeMode: 'contain'}}
+                />
+                <CoffeeTitle>{item.name}</CoffeeTitle>
+              </Wrapper>
+              <IconArrow name="chevron-right" />
+            </FlatItem>
+          </SelectProduct>
         )}
       />
     </Container>
