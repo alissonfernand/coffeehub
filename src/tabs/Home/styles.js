@@ -53,6 +53,8 @@ export const TitleBold = styled(Title)`
   color: ${COLORS.primary};
 `;
 
+export const SelectProduct = styled.TouchableOpacity``;
+
 export const FlatItem = styled.View`
   flex-direction: row;
   justify-content: space-between;
