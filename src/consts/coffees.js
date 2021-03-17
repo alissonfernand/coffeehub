@@ -2,32 +2,52 @@ const coffees = [
   {
     id: 1,
     name: 'Espresso',
-    price: 9,
-    image: require('../assets/coffees/Espresso.png'),
+    prices: {
+      small: 9,
+      medium: 16,
+      large: 23,
+    },
+    image: require('../assets/images/Espresso.png'),
   },
   {
     id: 2,
     name: 'Cappuccino',
-    price: 9,
-    image: require('../assets/coffees/Cappuccino.png'),
+    prices: {
+      small: 9,
+      medium: 16,
+      large: 23,
+    },
+    image: require('../assets/images/Cappuccino.png'),
   },
   {
     id: 3,
     name: 'Macchiato',
-    price: 9,
-    image: require('../assets/coffees/macciato.png'),
+    prices: {
+      small: 9,
+      medium: 16,
+      large: 23,
+    },
+    image: require('../assets/images/macciato.png'),
   },
   {
     id: 4,
     name: 'Mocha',
-    price: 9,
-    image: require('../assets/coffees/Mocha.png'),
+    prices: {
+      small: 9,
+      medium: 16,
+      large: 23,
+    },
+    image: require('../assets/images/Mocha.png'),
   },
   {
     id: 5,
     name: 'Latte',
-    price: 9,
-    image: require('../assets/coffees/latte.png'),
+    prices: {
+      small: 9,
+      medium: 16,
+      large: 23,
+    },
+    image: require('../assets/images/latte.png'),
   },
 ];
 
