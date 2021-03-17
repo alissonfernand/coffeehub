@@ -1,12 +1,13 @@
 import React from 'react';
-import {StatusBar, View} from 'react-native';
-
-import AppBar from '../../components/AppBar';
+import {StatusBar} from 'react-native';
 
 import coffee from '../../assets/images/macciato.png';
 
+// import Button from '../../components/Button';
+
 import {
   Container,
+  TextCard,
   CartProduct,
   ProductImage,
   Wrapper,
@@ -17,6 +18,10 @@ import {
   ContainerQuantityPrice,
   ProductAmount,
   ProductPrice,
+  // Price,
+  // ContainerPriceBuy,
+  // TextBuy,
+  ScrollProducts,
 } from './styles';
 
 const Cart = () => {
@@ -28,56 +33,114 @@ const Cart = () => {
         backgroundColor="transparent"
       />
 
-      <AppBar text="Cart" />
+      <TextCard>Card</TextCard>
 
-      <CartProduct>
-        <ProductImage source={coffee} />
+      <ScrollProducts showsVerticalScrollIndicator={false}>
+        <CartProduct>
+          <ProductImage source={coffee} />
 
-        <Wrapper>
-          <ProductDetails>
-            <ProductName>Macchiato</ProductName>
-            <ProductSize>Size Small</ProductSize>
-            <ProductSugar>Sugar One</ProductSugar>
-          </ProductDetails>
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
 
-          <ContainerQuantityPrice>
-            <ProductAmount>x2</ProductAmount>
-            <ProductPrice>$210</ProductPrice>
-          </ContainerQuantityPrice>
-        </Wrapper>
-      </CartProduct>
-      <CartProduct>
-        <ProductImage source={coffee} />
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
+        <CartProduct>
+          <ProductImage source={coffee} />
 
-        <Wrapper>
-          <ProductDetails>
-            <ProductName>Macchiato</ProductName>
-            <ProductSize>Size Small</ProductSize>
-            <ProductSugar>Sugar One</ProductSugar>
-          </ProductDetails>
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
 
-          <ContainerQuantityPrice>
-            <ProductAmount>x2</ProductAmount>
-            <ProductPrice>$210</ProductPrice>
-          </ContainerQuantityPrice>
-        </Wrapper>
-      </CartProduct>
-      <CartProduct>
-        <ProductImage source={coffee} />
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
 
-        <Wrapper>
-          <ProductDetails>
-            <ProductName>Macchiato</ProductName>
-            <ProductSize>Size Small</ProductSize>
-            <ProductSugar>Sugar One</ProductSugar>
-          </ProductDetails>
+        <CartProduct>
+          <ProductImage source={coffee} />
 
-          <ContainerQuantityPrice>
-            <ProductAmount>x2</ProductAmount>
-            <ProductPrice>$210</ProductPrice>
-          </ContainerQuantityPrice>
-        </Wrapper>
-      </CartProduct>
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
+
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
+        <CartProduct>
+          <ProductImage source={coffee} />
+
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
+
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
+        <CartProduct>
+          <ProductImage source={coffee} />
+
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
+
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
+        <CartProduct>
+          <ProductImage source={coffee} />
+
+          <Wrapper>
+            <ProductDetails>
+              <ProductName>Macchiato</ProductName>
+              <ProductSize>Size Small</ProductSize>
+              <ProductSugar>Sugar One</ProductSugar>
+            </ProductDetails>
+
+            <ContainerQuantityPrice>
+              <ProductAmount>x2</ProductAmount>
+              <ProductPrice>$210</ProductPrice>
+            </ContainerQuantityPrice>
+          </Wrapper>
+        </CartProduct>
+      </ScrollProducts>
+
+      {/* <ContainerPriceBuy>
+        <Price>$210</Price>
+        <Button>
+          <TextBuy>Buy</TextBuy>
+        </Button>
+      </ContainerPriceBuy> */}
     </Container>
   );
 };
