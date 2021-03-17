@@ -9,6 +9,11 @@ import {
   Container,
   ContainerShadow,
   ImageBackground,
+  AppBar,
+  HandleNavigation,
+  IconBack,
+  AppBarTitle,
+  Spacer,
   ProductImage,
   Wrapper,
   ProducName,
@@ -29,11 +34,8 @@ import {
   ContainerSugarIcons,
   SelectSugar,
   ContainerButton,
-  ButtonAddCart,
   TextButton,
 } from './styles';
-
-import img from '../../assets/coffees/macciato.png';
 
 import CoffeeSmall from '../../components/CoffeesSizes/CoffeeSmall';
 import CoffeeMedium from '../../components/CoffeesSizes/CoffeeMedium';
@@ -43,9 +45,12 @@ import SugarZero from '../../components/sugars/SugarZero';
 import SugarOne from '../../components/sugars/SugarOne';
 import SugarTwo from '../../components/sugars/SugarTwo';
 import SugarThree from '../../components/sugars/SugarThree';
-import AppBar from '../../components/AppBar';
 
-const ProductDetails = () => {
+const ProductDetails = ({route, navigation}) => {
+  const product = route.params;
+
+  console.log(product);
+
   const [size, setSize] = useState('small');
   const [sugar, setSugar] = useState('zero');
   const [amout, setAmout] = useState(1);
@@ -79,17 +84,23 @@ const ProductDetails = () => {
 
       <ContainerShadow>
         <ImageBackground source={background}>
-          <AppBar text={'dasdasd'} />
+          <AppBar>
+            <HandleNavigation onPress={() => navigation.goBack()}>
+              <IconBack />
+            </HandleNavigation>
+            <AppBarTitle>{product.name}</AppBarTitle>
+            <Spacer />
+          </AppBar>
 
-          <ProductImage source={img} />
+          <ProductImage source={product.image} />
         </ImageBackground>
       </ContainerShadow>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <Wrapper>
           <View>
-            <ProducName>Macchiato</ProducName>
-            <ProducPrice>$210</ProducPrice>
+            <ProducName>{product.name}</ProducName>
+            <ProducPrice>${product.prices[size]}</ProducPrice>
           </View>
           <ContainerAmount>
             <Decrement onPress={decrementAmount}>
