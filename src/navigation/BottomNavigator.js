@@ -2,6 +2,8 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+import {useSelector} from 'react-redux';
+
 import {responsiveHeight} from 'react-native-responsive-dimensions';
 
 import Home from '../tabs/Home';
@@ -21,6 +23,9 @@ const Tab = createBottomTabNavigator();
 const heightTabBar = responsiveHeight(10.05);
 
 const BottomNavigator = () => {
+  // get state reducer
+  const {products} = useSelector((state) => state.cart);
+
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -50,7 +55,6 @@ const BottomNavigator = () => {
         component={Map}
         options={{
           tabBarIcon: ({color}) => <LocationIcon color={color} />,
-          tabBarBadge: 3,
         }}
       />
       <Tab.Screen
@@ -58,6 +62,8 @@ const BottomNavigator = () => {
         component={Cart}
         options={{
           tabBarIcon: ({color}) => <CoffeeIcon color={color} />,
+          tabBarBadge: products.length,
+          tabBarBadgeStyle: {backgroundColor: '#707070', marginTop: 10},
         }}
       />
       <Tab.Screen
