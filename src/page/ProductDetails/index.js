@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {ScrollView, StatusBar, View} from 'react-native';
+
+import {useDispatch} from 'react-redux';
+import {addToCart} from '../../store/modules/cart/actions';
 
 import background from '../../assets/background_details.png';
 
@@ -49,11 +52,18 @@ import SugarThree from '../../components/sugars/SugarThree';
 const ProductDetails = ({route, navigation}) => {
   const product = route.params;
 
-  console.log(product);
+  const dispatch = useDispatch();
 
   const [size, setSize] = useState('small');
   const [sugar, setSugar] = useState('zero');
-  const [amout, setAmout] = useState(1);
+  const [amount, setAmount] = useState(1);
+  const [newProduct, setNEwProduct] = useState({
+    name: null,
+    price: null,
+    size: null,
+    sugar: null,
+    amount: null,
+  });
 
   function handleSize(coffeeSize) {
     setSize(coffeeSize);
@@ -64,15 +74,30 @@ const ProductDetails = ({route, navigation}) => {
   }
 
   function incrementAmount() {
-    setAmout(amout + 1);
+    setAmount(amount + 1);
   }
 
   function decrementAmount() {
-    if (amout === 1) {
+    if (amount === 1) {
       return;
     }
-    setAmout(amout - 1);
+    setAmount(amount - 1);
   }
+
+  function handleAddToCart() {
+    dispatch(addToCart(newProduct));
+    navigation.navigate('DrawerNavigator');
+  }
+
+  useEffect(() => {
+    setNEwProduct({
+      ...product,
+      price: product.prices[size],
+      size: size,
+      sugar: sugar,
+      amount: amount,
+    });
+  }, [size, sugar, amount, product]);
 
   return (
     <Container>
@@ -106,7 +131,7 @@ const ProductDetails = ({route, navigation}) => {
             <Decrement onPress={decrementAmount}>
               <MinusIcon />
             </Decrement>
-            <Amount>{amout}</Amount>
+            <Amount>{amount}</Amount>
             <Increment onPress={incrementAmount}>
               <IconPlus />
             </Increment>
@@ -158,7 +183,7 @@ const ProductDetails = ({route, navigation}) => {
         </ContainerSugarIcons>
 
         <ContainerButton>
-          <Button>
+          <Button onPress={handleAddToCart}>
             <TextButton>Add to cart</TextButton>
           </Button>
         </ContainerButton>
