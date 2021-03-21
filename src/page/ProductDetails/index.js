@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {ScrollView, StatusBar, View} from 'react-native';
+import {ScrollView, StatusBar, View, Image} from 'react-native';
 
 import {useDispatch} from 'react-redux';
 import {addToCart} from '../../store/modules/cart/actions';
@@ -51,6 +51,8 @@ import SugarThree from '../../components/sugars/SugarThree';
 
 const ProductDetails = ({route, navigation}) => {
   const product = route.params;
+  // get url image
+  const productImageUri = Image.resolveAssetSource(product.image).uri;
 
   const dispatch = useDispatch();
 
@@ -58,11 +60,13 @@ const ProductDetails = ({route, navigation}) => {
   const [sugar, setSugar] = useState('zero');
   const [amount, setAmount] = useState(1);
   const [newProduct, setNEwProduct] = useState({
+    id: null,
     name: null,
     price: null,
     size: null,
     sugar: null,
     amount: null,
+    image: null,
   });
 
   function handleSize(coffeeSize) {
@@ -96,8 +100,9 @@ const ProductDetails = ({route, navigation}) => {
       size: size,
       sugar: sugar,
       amount: amount,
+      image: productImageUri,
     });
-  }, [size, sugar, amount, product]);
+  }, [size, sugar, amount, product, productImageUri]);
 
   return (
     <Container>
