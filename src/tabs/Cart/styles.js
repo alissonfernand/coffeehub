@@ -2,10 +2,8 @@ import styled from 'styled-components/native';
 
 import {COLORS, FONT_FAMILY} from '../../consts/utils';
 
-import bg from '../../assets/bg.png';
-
 export const Container = styled.ImageBackground.attrs({
-  source: `${bg}`,
+  source: require('../../assets/bg.png'),
 })`
   flex: 1;
   background-color: ${COLORS.background};
@@ -36,7 +34,7 @@ export const CartProduct = styled.View.attrs({
 `;
 
 export const ProductImage = styled.Image.attrs({
-  width: 41,
+  width: 31,
   height: 61,
   resizeMode: 'contain',
 })`
