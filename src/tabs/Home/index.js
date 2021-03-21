@@ -53,7 +53,7 @@ const Home = ({navigation}) => {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={coffees}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
           <SelectProduct
             onPress={() => navigation.navigate('ProductDetails', item)}>
