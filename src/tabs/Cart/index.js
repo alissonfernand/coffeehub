@@ -3,8 +3,6 @@ import {StatusBar} from 'react-native';
 
 import {useSelector} from 'react-redux';
 
-import coffee from '../../assets/images/macciato.png';
-
 // import Button from '../../components/Button';
 
 import {
@@ -40,24 +38,28 @@ const Cart = () => {
       <TextCard>Card</TextCard>
 
       <ScrollProducts showsVerticalScrollIndicator={false}>
-        {products.map((product) => (
-          <CartProduct>
-            <ProductImage source={coffee} />
+        {products.length ? (
+          products.map((product) => (
+            <CartProduct key={product.id}>
+              <ProductImage source={{uri: product.image}} />
 
-            <Wrapper>
-              <ProductDetails>
-                <ProductName>{product.name}</ProductName>
-                <ProductSize>Size {product.size}</ProductSize>
-                <ProductSugar>Sugar {product.sugar}</ProductSugar>
-              </ProductDetails>
+              <Wrapper>
+                <ProductDetails>
+                  <ProductName>{product.name}</ProductName>
+                  <ProductSize>Size {product.size}</ProductSize>
+                  <ProductSugar>Sugar {product.sugar}</ProductSugar>
+                </ProductDetails>
 
-              <ContainerQuantityPrice>
-                <ProductAmount>x{product.amount}</ProductAmount>
-                <ProductPrice>${product.price}</ProductPrice>
-              </ContainerQuantityPrice>
-            </Wrapper>
-          </CartProduct>
-        ))}
+                <ContainerQuantityPrice>
+                  <ProductAmount>x{product.amount}</ProductAmount>
+                  <ProductPrice>${product.price}</ProductPrice>
+                </ContainerQuantityPrice>
+              </Wrapper>
+            </CartProduct>
+          ))
+        ) : (
+          <ProductPrice>dasdasd</ProductPrice>
+        )}
       </ScrollProducts>
 
       {/* <ContainerPriceBuy>
