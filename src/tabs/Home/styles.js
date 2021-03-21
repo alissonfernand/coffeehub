@@ -30,8 +30,8 @@ export const DisplayDrawer = styled.TouchableOpacity``;
 export const DisplaySearch = styled(DisplayDrawer)``;
 
 export const Image = styled.Image`
-  width: ${responsiveWidth(5.08)};
-  height: ${responsiveHeight(2.35)};
+  width: ${responsiveWidth(5.08)}px;
+  height: ${responsiveHeight(2.35)}px;
 `;
 
 export const Menu = styled.View`
@@ -45,7 +45,7 @@ export const MenuRow = styled.View`
 
 export const Title = styled.Text`
   font-family: ${FONT_FAMILY.fontRegular};
-  font-size: ${responsiveFontSize(4.5)};
+  font-size: ${responsiveFontSize(4.5)}px;
 `;
 
 export const TitleBold = styled(Title)`
@@ -68,17 +68,17 @@ export const Wrapper = styled.View`
 `;
 
 export const IconCoffee = styled(Image)`
-  width: ${responsiveWidth(9.67)};
-  height: ${responsiveHeight(6.7)};
+  width: ${responsiveWidth(9.67)}px;
+  height: ${responsiveHeight(6.7)}px;
   margin-right: ${responsiveWidth(7.73)}px;
 `;
 
 export const CoffeeTitle = styled(Title)`
-  font-size: ${responsiveFontSize(2.5)};
-  line-height: ${responsiveFontSize(3.375)};
+  font-size: ${responsiveFontSize(2.5)}px;
+  line-height: ${responsiveFontSize(3.375)}px;
 `;
 
 export const IconArrow = styled(Icon)`
   color: ${COLORS.primary};
-  font-size: ${responsiveFontSize(1.75)};
+  font-size: ${responsiveFontSize(1.75)}px;
 `;
