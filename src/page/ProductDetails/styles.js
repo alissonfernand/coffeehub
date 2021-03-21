@@ -47,7 +47,7 @@ export const IconBack = styled(Icon).attrs({
 export const AppBarTitle = styled.Text`
   font-family: ${FONT_FAMILY.fontBold};
   font-size: 23px;
-  line-height: 31;
+  line-height: 31px;
   text-align: center;
 `;
 
@@ -96,8 +96,8 @@ export const Decrement = styled.TouchableOpacity.attrs({
   align-items: center;
   text-align: center;
   background: ${COLORS.primary};
-  border-top-left-radius: 25;
-  border-bottom-left-radius: 25;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 `;
 
 export const IconPlus = styled(Icon).attrs({
@@ -123,8 +123,8 @@ export const Increment = styled.TouchableOpacity.attrs({
   height: 28px;
   width: 31px;
   background: ${COLORS.primary};
-  border-top-right-radius: 25;
-  border-bottom-right-radius: 25;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 `;
 
 export const TextSize = styled.Text`
