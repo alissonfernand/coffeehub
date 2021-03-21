@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StatusBar} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -11,11 +11,17 @@ import ProductDetails from './page/ProductDetails';
 import {Provider} from 'react-redux';
 import store from './store';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import {COLORS} from './consts/utils';
 
 const Stack = createStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <Provider store={store}>
       <NavigationContainer>
