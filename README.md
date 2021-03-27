@@ -20,7 +20,6 @@ CREDIT, click here:  [DRIBBLE](https://dribbble.com/shots/11469739-Daily-UI-Chal
 ## 🚀 Technologies
 
 Technologies that I used to develop this mobile client
-- [ReactJS]
 - [React Native]
 - [React Navigation]
 - [React Native Vector Icons]
