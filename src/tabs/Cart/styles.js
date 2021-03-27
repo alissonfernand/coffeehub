@@ -115,3 +115,8 @@ export const TextBuy = styled.Text`
   text-transform: uppercase;
   color: #ffffff;
 `;
+
+export const TextProductEmpty = styled.Text`
+  text-align: center;
+  font-size: ${responsiveFontSize(3)}px;
+`;

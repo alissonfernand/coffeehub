@@ -18,6 +18,7 @@ import {
   ContainerQuantityPrice,
   ProductAmount,
   ProductPrice,
+  TextProductEmpty,
   // Price,
   // ContainerPriceBuy,
   // TextBuy,
@@ -58,7 +59,7 @@ const Cart = () => {
             </CartProduct>
           ))
         ) : (
-          <ProductPrice>dasdasd</ProductPrice>
+          <TextProductEmpty>Nenhum produto adicionado</TextProductEmpty>
         )}
       </ScrollProducts>
 
